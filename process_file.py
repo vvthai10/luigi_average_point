@@ -7,6 +7,7 @@ class CalculateAveragePoint(luigi.Task):
 
     def output(self):
         output_file = self.input_file.replace("submits", "results")
+        os.remove(self.input_file)
         return luigi.LocalTarget(output_file)
 
     def run(self):
@@ -17,5 +18,4 @@ class CalculateAveragePoint(luigi.Task):
         # Save
         output_file = self.input_file.replace("submits", "results")
         df.to_csv(output_file)
-        os.remove(self.input_file)
 

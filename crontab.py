@@ -8,7 +8,7 @@ def scheduled_job():
     dt = datetime.datetime.now()
     print(f"{dt} | worker started")
     
-    folder_to_watch = '/home/lap14088/Documents/luigi_average_point/submits'
+    folder_to_watch = '/home/lap14088/Documents/workspaces/luigi/luigi_average_point/submits'
     for new_file in os.listdir(folder_to_watch):
         file_path = os.path.join(folder_to_watch, new_file)
         if os.path.isfile(file_path):
